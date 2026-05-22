@@ -1,0 +1,334 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    line-height: 1.6;
+    background: #f4f9ff;
+    color: #333;
+}
+
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: auto;
+    overflow: hidden;
+}
+
+/* Header & Navigation */
+header {
+    background: #0a2b44;
+    color: #fff;
+    padding: 1rem 0;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+}
+
+.nav-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.logo-area {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.logo {
+    width: 60px;
+    height: 60px;
+    object-fit: contain;
+    background: white;
+    border-radius: 50%;
+    padding: 5px;
+}
+
+.logo-area h1 {
+    font-size: 1.4rem;
+    font-weight: 600;
+}
+
+.nav-links {
+    display: flex;
+    list-style: none;
+    gap: 2rem;
+}
+
+.nav-links a {
+    color: #fff;
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.3s;
+}
+
+.nav-links a:hover, .nav-links a.active {
+    color: #ffc107;
+}
+
+.menu-toggle {
+    display: none;
+    font-size: 1.8rem;
+    cursor: pointer;
+}
+
+/* Jumbotron Slider */
+.jumbotron {
+    position: relative;
+    height: 500px;
+    overflow: hidden;
+}
+
+.slider {
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+
+.slide {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-position: center;
+    opacity: 0;
+    transition: opacity 0.8s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+.slide.active {
+    opacity: 1;
+}
+
+.slide-content {
+    color: white;
+    padding: 0 1rem;
+    max-width: 800px;
+}
+
+.slide-content h2 {
+    font-size: 2.8rem;
+    margin-bottom: 1rem;
+    text-shadow: 2px 2px 5px rgba(0,0,0,0.5);
+}
+
+.slide-content p {
+    font-size: 1.2rem;
+    margin-bottom: 1.5rem;
+}
+
+.btn {
+    display: inline-block;
+    background: #ffc107;
+    color: #0a2b44;
+    padding: 12px 28px;
+    border-radius: 40px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+.btn:hover {
+    background: #ffcd38;
+    transform: scale(1.05);
+}
+
+.slider-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(0,0,0,0.5);
+    color: white;
+    border: none;
+    padding: 12px 18px;
+    cursor: pointer;
+    font-size: 1.5rem;
+    z-index: 10;
+    border-radius: 50%;
+}
+
+.prev { left: 20px; }
+.next { right: 20px; }
+
+.slider-dots {
+    position: absolute;
+    bottom: 20px;
+    left: 0;
+    right: 0;
+    text-align: center;
+}
+
+.dot {
+    display: inline-block;
+    width: 12px;
+    height: 12px;
+    background: #bbb;
+    border-radius: 50%;
+    margin: 0 5px;
+    cursor: pointer;
+}
+
+.dot.active {
+    background: #ffc107;
+}
+
+/* Info Panels */
+.info-panels {
+    display: flex;
+    gap: 2rem;
+    margin: 3rem 0;
+    flex-wrap: wrap;
+}
+
+.panel {
+    background: white;
+    flex: 1;
+    padding: 1.5rem;
+    border-radius: 12px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+    border-left: 5px solid #ffc107;
+}
+
+.panel h3 {
+    margin-bottom: 1rem;
+    color: #0a2b44;
+}
+
+.sambutan {
+    background: #e8f0fe;
+    padding: 2rem;
+    border-radius: 20px;
+    margin-bottom: 2rem;
+}
+
+.sambutan h2 {
+    color: #0a2b44;
+    margin-bottom: 1rem;
+}
+
+/* Jurusan Page */
+.page-title {
+    text-align: center;
+    margin: 2rem 0;
+    font-size: 2rem;
+    color: #0a2b44;
+    position: relative;
+}
+
+.jurusan-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+    margin: 2rem 0;
+}
+
+.jurusan-card {
+    background: white;
+    padding: 1.8rem;
+    border-radius: 20px;
+    text-align: center;
+    transition: 0.3s;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.05);
+}
+
+.jurusan-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 15px 30px rgba(0,0,0,0.1);
+}
+
+.jurusan-icon {
+    font-size: 3rem;
+    background: #0a2b44;
+    display: inline-block;
+    width: 80px;
+    height: 80px;
+    line-height: 80px;
+    border-radius: 50%;
+    color: #ffc107;
+    margin-bottom: 1rem;
+}
+
+.jurusan-card h3 {
+    font-size: 1.8rem;
+    margin: 0.5rem 0;
+    color: #0a2b44;
+}
+
+.jurusan-card ul {
+    text-align: left;
+    margin-top: 1rem;
+    padding-left: 1.2rem;
+}
+
+.jurusan-card li {
+    margin: 0.5rem 0;
+}
+
+/* Content Pages */
+.content-box {
+    background: white;
+    padding: 2rem;
+    border-radius: 24px;
+    margin: 2rem 0;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+}
+
+.visi-box, .misi-box, .tujuan-box {
+    border-left: 8px solid #ffc107;
+}
+
+.content-box h3 {
+    color: #0a2b44;
+    margin-bottom: 1rem;
+    font-size: 1.6rem;
+}
+
+/* Footer */
+footer {
+    background: #0a2b44;
+    color: white;
+    text-align: center;
+    padding: 2rem 0;
+    margin-top: 3rem;
+}
+
+footer p {
+    margin: 0.5rem 0;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .menu-toggle {
+        display: block;
+    }
+    .nav-links {
+        display: none;
+        width: 100%;
+        flex-direction: column;
+        background: #0a2b44;
+        text-align: center;
+        padding: 1rem 0;
+    }
+    .nav-links.show {
+        display: flex;
+    }
+    .slide-content h2 {
+        font-size: 1.8rem;
+    }
+    .info-panels {
+        flex-direction: column;
+    }
+    .logo-area h1 {
+        font-size: 1rem;
+    }
+}
